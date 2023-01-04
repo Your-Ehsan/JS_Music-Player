@@ -4,7 +4,7 @@
 |--------------------------------------------------
 */
 
-const carousel = document.querySelectorAll(".section--carousel img");
+const carousel = [...document.querySelectorAll(".section--carousel img")];
 
 let carouselImageIndex = 0;
 
@@ -94,6 +94,9 @@ const Play = document.querySelector(".Play");
 const Pause = document.querySelector(".Pause");
 const ForWard = document.querySelector(".ForWard");
 const BackWard = document.querySelector(".BackWard");
+
+const QueueCoverImg = document.querySelector(".PlayList--Queue-cover img");
+const QueueName = document.querySelector(".PlayList--Queue-name");
 
 const Volume = document.querySelector(".Volume");
 const VolumeSlider = document.querySelector(".volume-slider");
@@ -213,7 +216,7 @@ Redo.addEventListener("click", () => {
   Redo.classList.toggle("active");
 });
 
-// volume controling script
+// volume controlling script
 Volume.addEventListener("click", () => {
   Volume.classList.toggle("active");
   VolumeSlider.classList.toggle("active");
@@ -223,9 +226,36 @@ VolumeSlider.addEventListener("input", () => {
   Music.volume = VolumeSlider.value;
 });
 
+/**
+|--------------------------------------------------
+| PlayList Area Scripting 
+|--------------------------------------------------
+*/
 queue.forEach((ITEM, E) => {
   ITEM.addEventListener("click", () => {
     setMusic(E);
     Play.click();
   });
 });
+
+/**
+|--------------------------------------------------
+| Adding songs from the databases in default html
+|--------------------------------------------------
+*/
+
+// queue.forEach(() => {
+// })
+
+const QueueContainer = document.querySelector(".PlayList--Queue-container");
+const QueueData = songs.map((props) => {
+  return ` <div class="PlayList--Queue">
+  <div class="PlayList--Queue-cover">
+    <img src=${props.ImgSrc} alt="">
+    <i class="fa fa-pause"></i>
+  </div>
+  <p class="PlayList--Queue-name">${props.Name}</p>
+</div>`;
+});
+QueueContainer.innerHTML = QueueData;
+console.log(QueueData);
