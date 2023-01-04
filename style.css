@@ -182,6 +182,9 @@ body {
   display: block;
   opacity: 0.5;
 }
+span.fas.fa-redo.Redo.active {
+  color: var(--secondary-color);
+}
 .MusicPlayer.MusicPlayer.active .MusicPlayer--controls span .active {
   color: var(--primary-color);
   opacity: 1;
@@ -301,7 +304,6 @@ body {
   z-index: 3;
   transition: 1s;
   overflow: auto;
-  /* display: none; */
 }
 .PlayList.active{
   right: 0;
