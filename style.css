@@ -10,8 +10,8 @@
   --bg-color: #000;
   --text-color: #fff;
   --primary-color: #db4848;
-  --secondary-color: #db4848;
-  --alpha-color: #db4848;
+  --secondary-color: #21a8a2;
+  --alpha-color: #1f46c5;
   --shadow: 8, 15px, 48px, var(--alpha-color);
 }
 
@@ -69,17 +69,288 @@ body {
 /* carousel */
 
 /* playlist area  */
-.section--heading{
-    margin: 30px 0 18px;
-    text-transform: capitalize;
-    font-weight: 400;
-    font-size: 30px;
+.playList {
+  background-color: var(--bg-color);
+}
+.playList--heading {
+  margin: 30px 0 18px;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 30px;
 }
 /* playlists cards */
-.playlists-group {
+.playList-group {
   position: relative;
   width: 100%;
+  min-width: 200px;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 /* playlists cards */
+.playLists-group--cards {
+  flex: 0 0 auto;
+  max-width: 150px;
+  height: 100%;
+  margin: 20px;
+}
 
+.playLists-group--cards-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+.playLists-group--cards-name {
+  width: 100%;
+  text-align: justify;
+  font-size: 20px;
+  text-transform: capitalize;
+  padding: 6px;
+}
 /* playlist area  */
+/* music player section */
+.MusicPlayer {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: var(--alpha-color);
+  -webkit-backdrop-filter: blur(50px);
+  -moz-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  transition: 1s;
+}
+/* Musik player seek bar section */
+.MusicPlayer--SeekBar-container {
+}
+.MusicPlayer--SeekBar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  position: absolute;
+  top: -4px;
+  height: 8px;
+  background: var(--secondary-color);
+  overflow: hidden;
+}
+/* .MusicPlayer--SeekBar::-webkit-slider-runnable-track{
+  background: var(--alpha-color);
+} */
+.MusicPlayer--SeekBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px;
+  width: 6px;
+  background: var(--primary-color);
+  cursor: pointer;
+  box-shadow: -400px 8px 0px 400px var(--primary-color);
+}
+
+.MusicPlayer--currentSong {
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 6px;
+  text-transform: capitalize;
+}
+/* Musik player seek bar section */
+/* Music player controls section styling */
+.MusicPlayer--controls {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  font-size: 30px;
+}
+.MusicPlayer--controls span {
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+.MusicPlayer.active .MusicPlayer--controls {
+  justify-content: space-between;
+}
+.MusicPlayer.active .MusicPlayer--controls span {
+  font-size: 25px;
+  display: block;
+  opacity: 0.5;
+}
+.MusicPlayer.MusicPlayer.active .MusicPlayer--controls span .active {
+  color: var(--primary-color);
+  opacity: 1;
+}
+.MusicPlayer--controls .MusicPlayer--controls--main i {
+  margin: 0 5px;
+  display: none;
+}
+.MusicPlayer--controls .MusicPlayer--controls--main .active {
+  display: inline;
+}
+.MusicPlayer .hide {
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+.MusicPlayer.active .hide {
+  display: block;
+  opacity: 1;
+}
+.MusicPlayer.active {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.MusicPlayer.active .MusicPlayer--SeekBar {
+  position: relative;
+  display: block;
+  border-radius: 50px;
+  margin: auto;
+}
+.MusicPlayer.active .MusicPlayer--currentSong {
+  font-size: 40px;
+}
+.MusicPlayer.active .MusicPlayer--controls {
+  width: 100%;
+  font-size: 50px;
+}
+.MusicPlayer--artist {
+  text-align: center;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.MusicPlayer--cover {
+  width: 30vh;
+  height: 30vh;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.currentTime {
+  position: absolute;
+  margin-top: 6px;
+  left: 30px;
+}
+.durationTime {
+  position: absolute;
+  margin-top: 6px;
+  right: 30px;
+}
+
+.icon {
+  position: absolute;
+  top: 60px;
+  transform: scale(1.5);
+}
+.back-btn {
+  left: 48px;
+}
+.nav-btn {
+  right: 48px;
+}
+/* volume control section */
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  right: -35px;
+  bottom: 80px;
+  transform: rotate(-90deg);
+  border-radius: 20px;
+  background: var(--bg-color);
+  overflow: hidden;
+  opacity: 0;
+  display: none;
+}
+.volume-slider.active {
+  opacity: 1;
+  display: block;
+}
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 40px;
+  width: 10px;
+  background: var(--primary-color);
+  box-shadow: -280px 0px 1px 260px var(--primary-color);
+}
+/* volume control section */
+/* Playlist atyling area  */
+
+.PlayList {
+  /* This is 2nd section with that same play list classname  playList and PlayList*/
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  padding: 30px 0;
+  background-color: var(--bg-color);
+  z-index: 3;
+  transition: 1s;
+  overflow: auto;
+  /* display: none; */
+}
+.PlayList.active{
+  right: 0;
+}
+.PlayList--Title {
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 15px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+.PlayList--Queue {
+  width: 100%;
+  height: 80px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid var(--alpha-color);
+}
+.PlayList--Queue-cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 20px;
+  position: relative;
+}
+.PlayList--Queue-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.PlayList--Queue-cover i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: var(--primary-color);
+  display: none;
+}
+.PlayList--Queue.active i{
+  display: block;
+}
+.PlayList--Queue .PlayList--Queue-name {
+  font-size: 22px;
+  text-transform: capitalize;
+}
+/* Playlist atyling area  */
+/* Music player controls section styling */
+/* music player section */ ;

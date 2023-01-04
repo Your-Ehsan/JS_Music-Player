@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="all.css" />
     <title>Document</title>
   </head>
   <body>
@@ -13,40 +14,143 @@
       <!-- carousel -->
       <div class="section--carousel">
         <img src="./assets/images/img_1.jpg" alt="" class="active" />
-        <img src="./assets/images/img_2.jpg" alt="" />
-        <img src="./assets/images/img_3.jpg" alt="" />
+        <img src="./assets/images/img_2.jpg" alt="" class="" />
+        <img src="./assets/images/img_3.jpg" alt="" class="" />
       </div>
       <!-- playlists area  -->
-      <h1 class="section--heading">Recently played</h1>
-      <div class="playlist--group">
-        <div class="playlists--cards">
-          <img
-            class="playlists--cards-img"
-            src="./assets/images/img_1.jpg"
-            alt=""
-          />
-          <p class="playlists--cards-name">Top internationals</p>
+      <div class="playList">
+        <h1 class="playList--heading">Recently played</h1>
+        <div class="playList-group">
+          <div class="playLists-group--cards">
+            <img
+              class="playLists-group--cards-img"
+              src="./assets/images/img_1.jpg"
+              alt=""
+            />
+            <p class="playLists-group--cards-name">Top internationals</p>
+          </div>
+          <div class="playLists-group--cards">
+            <img
+              class="playLists-group--cards-img"
+              src="./assets/images/img_2.jpg"
+              alt=""
+            />
+            <p class="playLists-group--cards-name">Top internationals</p>
+          </div>
+          <div class="playLists-group--cards">
+            <img
+              class="playLists-group--cards-img"
+              src="./assets/images/img_3.jpg"
+              alt=""
+            />
+            <p class="playLists-group--cards-name">Top internationals</p>
+          </div>
         </div>
-        <div class="playlists--cards">
-          <img
-            class="playlists--cards-img"
-            src="./assets/images/img_2.jpg"
-            alt=""
-          />
-          <p class="playlists--cards-name">Top internationals -2</p>
-        </div>
-        <div class="playlists--cards">
-          <img
-            class="playlists--cards-img"
-            src="./assets/images/img_3.jpg"
-            alt=""
-          />
-          <p class="playlists--cards-name">Top internationals -3</p>
+      </div>
+      <div class="playList">
+        <h1 class="playList--heading">Popular near you</h1>
+        <div class="playList-group">
+          <div class="playLists-group--cards">
+            <img
+              class="playLists-group--cards-img"
+              src="./assets/images/img_1.jpg"
+              alt=""
+            />
+            <p class="playLists-group--cards-name">Top internationals</p>
+          </div>
+          <div class="playLists-group--cards">
+            <img
+              class="playLists-group--cards-img"
+              src="./assets/images/img_2.jpg"
+              alt=""
+            />
+            <p class="playLists-group--cards-name">Top internationals</p>
+          </div>
+          <div class="playLists-group--cards">
+            <img
+              class="playLists-group--cards-img"
+              src="./assets/images/img_3.jpg"
+              alt=""
+            />
+            <p class="playLists-group--cards-name">Top internationals</p>
+          </div>
         </div>
       </div>
       <!-- playlists area  -->
       <!-- carousel -->
     </section>
+    <!-- MusicPlayer section-->
+    <section class="MusicPlayer">
+      <div class="icons-container">
+        <span class="fas fa-chevron-left back-btn icon hide"></span>
+        <span class="fas fa-bars-progress nav-btn icon hide"></span>
+      </div>
+
+      <h1 class="MusicPlayer--currentSong">song 1</h1>
+      <p class="MusicPlayer--artist hide">Artist 1</p>
+      <img
+        src="./assets/images/img_1.jpg"
+        class="MusicPlayer--cover hide"
+        alt=""
+      />
+      <div class="MusicPlayer--SeekBar-container">
+        <input
+          placeholder="MusicPlayer--SeekBar"
+          class="MusicPlayer--SeekBar"
+          type="range"
+          value="0"
+        />
+        <span class="currentTime hide">00 : 00</span>
+        <span class="durationTime hide">00 : 00</span>
+      </div>
+      <div class="MusicPlayer--controls">
+        <span class="fas fa-redo"></span>
+        <div class="MusicPlayer--controls--main">
+          <i class="fas fa-backward active"></i>
+          <i class="fas fa-play active"></i>
+          <i class="fas fa-pause"></i>
+          <i class="fas fa-forward active"></i>
+        </div>
+        <input
+          class="volume-slider"
+          placeholder="volume controller"
+          type="range"
+          max="1"
+          value="1"
+          step="0.1"
+        />
+        <span class="fas fa-volume-up"></span>
+      </div>
+    </section>
+    <section class="PlayList">
+      <div class="PlayList--heading-container">
+        <span class="fa back-btn icon fa-chevron-left"></span>
+        <h1 class="PlayList--Title">PlayList</h1>
+      </div>
+      <div class="PlayList--Queue active">
+        <div class="PlayList--Queue-cover">
+          <img src="./assets/images/img_1.jpg" alt="">
+          <i class="fa fa-pause"></i>
+        </div>
+        <p class="PlayList--Queue-name">Song 1</p>
+      </div>
+      <div class="PlayList--Queue">
+        <div class="PlayList--Queue-cover">
+          <img src="./assets/images/img_1.jpg" alt="">
+          <i class="fa fa-pause"></i>
+        </div>
+        <p class="PlayList--Queue-name">Song 1</p>
+      </div>
+      <div class="PlayList--Queue">
+        <div class="PlayList--Queue-cover">
+          <img src="./assets/images/img_1.jpg" alt="">
+          <i class="fa fa-pause"></i>
+        </div>
+        <p class="PlayList--Queue-name">Song 1</p>
+      </div>
+    </section>
+
+    <!-- MusicPlayer section-->
     <!-- home section -->
   </body>
   <script src="./main.js"></script>
