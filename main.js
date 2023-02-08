@@ -15,7 +15,7 @@ let songs = [
   {
     Name: "song 3",
     Artist: "Artist 3",
-    ImgSrc: "./assets/images/img_3.jpg",
+    ImgSrc: "./assets/images/img_3.webp",
     Path: "./assets/music/song_3.mp3",
   },
 ];
