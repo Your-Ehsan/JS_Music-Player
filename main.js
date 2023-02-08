@@ -1,3 +1,48 @@
+// Setup music ;)
+let songs = [
+  {
+    Name: "song 1",
+    Artist: "Artist 1",
+    ImgSrc: "./assets/images/img_1.jpg",
+    Path: "./assets/music/song_1.mp3",
+  },
+  {
+    Name: "song 2",
+    Artist: "Artist 2",
+    ImgSrc: "./assets/images/img_2.jpg",
+    Path: "./assets/music/song_2.mp3",
+  },
+  {
+    Name: "song 3",
+    Artist: "Artist 3",
+    ImgSrc: "./assets/images/img_3.jpg",
+    Path: "./assets/music/song_3.mp3",
+  },
+];
+// TODO: comment out for limited time only FIXME: I will handle U later 😠
+/**
+|--------------------------------------------------
+| Adding songs from the databases in default html
+|--------------------------------------------------
+*/
+
+// queue.forEach(() => {
+// })
+
+const QueueContainer = document.querySelector(".PlayList--Queue-container");
+// const QueueData = songs.map((props) => {
+//   return ` <div class="PlayList--Queue">
+//   <div class="PlayList--Queue-cover">
+//     <img src=${props.ImgSrc} alt="">
+//     <i class="fa fa-pause"></i>
+//   </div>
+//   <p class="PlayList--Queue-name">${props.Name}</p>
+// </div>`;
+// }); 
+
+// QueueContainer.innerHTML = QueueData;
+// console.log(QueueData);
+
 /**
 |--------------------------------------------------
 | script for carousel of main section
@@ -42,7 +87,7 @@ MusicPlayerSection.addEventListener("click", () => {
   clickCount++;
   setTimeout(() => {
     clickCount = 1;
-  }, 250);
+  }, 1000);
 });
 
 const CloseBtnMusic = document.querySelector(".icons-container .back-btn");
@@ -112,28 +157,6 @@ Pause.addEventListener("click", () => {
   Pause.classList.remove("active");
   Play.classList.add("active");
 });
-
-// Setup music ;)
-let songs = [
-  {
-    Name: "song 1",
-    Artist: "Artist 1",
-    ImgSrc: "./assets/images/img_1.jpg",
-    Path: "./assets/music/song_1.mp3",
-  },
-  {
-    Name: "song 2",
-    Artist: "Artist 2",
-    ImgSrc: "./assets/images/img_2.jpg",
-    Path: "./assets/music/song_2.mp3",
-  },
-  {
-    Name: "song 3",
-    Artist: "Artist 3",
-    ImgSrc: "./assets/images/img_3.jpg",
-    Path: "./assets/music/song_3.mp3",
-  },
-];
 
 const setMusic = (E) => {
   SeekBar.value = 0;
@@ -237,25 +260,3 @@ queue.forEach((ITEM, E) => {
     Play.click();
   });
 });
-
-/**
-|--------------------------------------------------
-| Adding songs from the databases in default html
-|--------------------------------------------------
-*/
-
-// queue.forEach(() => {
-// })
-
-const QueueContainer = document.querySelector(".PlayList--Queue-container");
-const QueueData = songs.map((props) => {
-  return ` <div class="PlayList--Queue">
-  <div class="PlayList--Queue-cover">
-    <img src=${props.ImgSrc} alt="">
-    <i class="fa fa-pause"></i>
-  </div>
-  <p class="PlayList--Queue-name">${props.Name}</p>
-</div>`;
-});
-QueueContainer.innerHTML = QueueData;
-console.log(QueueData);
